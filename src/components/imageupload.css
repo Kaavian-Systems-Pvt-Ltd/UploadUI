@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans');
+
+.shownimage {
+    height:7rem;
+    width: max-content;
+    padding-left: 0%;
+    margin-top: 10%;
+    transition: transform .2s;
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+.shownimage:hover {
+    height: 7.5rem;
+    width: max-content;
+    transform: scale(1.1);
+}
+
+.allshownimages {
+    margin-left: 8%;
+    position: relative;
+    column-gap: 10%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 100%;
+    max-width: 77%;
+    height: 10rem;
+    /* border: 1px solid black; */
+    padding-left: 5%;
+    margin-top: 5%;
+    overflow: scroll hidden;
+    scroll-snap-type: x mandatory;
+    scroll-padding: 0px 1.25rem;
+	scrollbar-width: none;
+}
+
+
+.allshownimages :active{
+    cursor: grab;
+    cursor: -webkit-grab;
+}
+
+/* Image Remove Button */
+
+.imageremovebtn {
+    width: fit-content;
+    height:fit-content;
+    color: #000000;
+    background: inherit;
+    font-size: medium;
+    border: 0px;
+    border-radius: 35%;
+    margin-left: 100%;
+    position: relative;
+    bottom: 80%;
+}
+
+.imageremovebtn:hover  {
+    cursor: pointer;
+}
+
+/* .uploadcomponentoverall {
+    width: fit-content;
+    margin-top: 10rem;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 20px;
+} */
+/*Header or Title in the upload box*/
+.uploadheader h2{
+    margin-left: 35%;
+    margin-top: 5%;
+    font-weight: 600;
+    font-family: 'Fira sans';
+}
+/* Drag and drop main div*/
+.FileDragAndDropOverAllDiv h3 {
+    margin-top: 15%;
+    margin-left: 15%;
+}
+
+.uploadheader h3{
+    line-height: 5px;
+    text-align: center;
+    font-weight: 400;
+    font-family: 'Fira sans';
+}
+/*Cancel button in pop up*/
+.popupclosebtn {
+    width: 30%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    border-radius: 10px;
+    color: #A9D6DA;
+    border: 1px solid #A9D6DA;
+}
+
+.popupclosebtn:hover{
+    cursor: pointer;
+    border: 1px solid #A9D6DA;
+    color: black;
+}
+/*upload button in pop up*/
+.uploadbutton {
+    border-radius: 10px;
+    margin-left: 10%;
+    width: 30%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    background: #0E8692;
+    color: #FFFFFF;
+    font-family: 'Fira sans';
+}
+
+.uploadbutton:hover {
+    cursor: pointer;
+}
+
+/*both upload and cancel button DIV*/
+.cancelanduploadbtn {
+    display: flex;
+    margin-left: 25%;
+    margin-top: 8%;
+    font-family: 'Fira sans';
+}
+/*Click here button inside drag and drop area*/
+.custom-file-input {
+    height: 10rem;
+    width: 83%;
+    margin-top: 2%;
+    margin-left: 8%;
+    background: linear-gradient(135deg, #FFFFFF 0%, #7FBDC4 100%);
+    border: 1px dashed #000000;
+    border-radius: 5px;
+}
+
+.uploadicon {
+    height: 40px;
+    margin-left: 30%;
+    margin-top: 8%;
+}
+
+.custom-file-input::-webkit-file-upload-button {
+    visibility: hidden; 
+}
+
+  .custom-file-input::before {
+    content: 'Click here';
+    display: inline-block;
+    color: #FFFFFF;
+    border-radius: 3px;
+    padding: 5px 8px;
+    outline: none;
+    white-space: nowrap;
+    cursor: pointer;
+    font-weight: 400;
+    font-family: 'Fira sans';
+    font-size: 18px;
+    margin-left: 39%;
+    margin-top: 27%;
+  }
+  .custom-file-input:hover::before {
+    border-color: black;
+    text-decoration: underline;
+  }
+
+.custom-file-input:hover {
+    cursor: pointer;
+}   
+
+.clicktoselectpara {
+    margin-top: -12%;
+}
+
+.clicktoselectpara:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+/*Text inside the drag and drop area*/
+.uploadparas{
+    width: fit-content;
+    margin-top: -32%;
+    margin-left: 38%;
+    color: black;
+    font-family: 'Fira sans';
+}
+
+.draganddroparea {
+    background: linear-gradient(135deg, #FFFFFF 0%, #7FBDC4 100%);
+}
+
+.orpara {
+    margin-left: 40%;
+}
+/*Whole pop up box*/
+.popup-main{
+    background-color: white;
+    position: absolute;
+    left: 30%;
+    top: 10%;
+    padding-bottom: .5%;
+    width: 35%;
+    height: fit-content;
+    border: 1px solid #0E8692;
+    box-shadow: 3px 7px 4px 4px #D7EFF2;
+    border-radius: 20px;
+}
+
+.drag-active {
+    border: 2px solid rgb(0, 0, 0) dashed;
+}
+
+.shownimagesheading h3 {
+    margin-top: 18%;
+    font-family: 'Fira sans';
+    font-weight: 400;
+}
+
+/* .overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgb(223, 215, 215);
+    opacity: 10;
+} */
