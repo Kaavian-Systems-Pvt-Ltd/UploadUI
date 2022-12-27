@@ -2,16 +2,20 @@ import React, { useEffect, useState } from 'react';
 import { FilesDragAndDrop } from './FileDragAndDrop.jsx';
 import './imageupload.css';
 
-export function UploadImageUIComponent({upload}) {
+export function UploadImageUIComponent({Userimages}) {
     const [popup, setPopup] = useState(false)
     const [imageURLs, setImageURLS] = useState([]);
     const [images, setImage] = useState([]);
+    const [imageurl, setImageurl] = useState([]);
 
     useEffect(() => {
-        if (images.length < 1) return;
+        if (images.length < 0) return;
         const newImageURLs = [];
         images.forEach(image => newImageURLs.push(URL.createObjectURL(image)));
         setImageURLS(newImageURLs);
+        if(images) {
+            upload(images);
+        };
     }, [images])
 
     function onImageChange(e) {
@@ -31,6 +35,23 @@ export function UploadImageUIComponent({upload}) {
         setImageURLS(s);
     };
 
+    const array = [];
+    const upload = (images) => {
+        console.log(images);
+        images.map((file) => {
+        const fileReader = new FileReader();
+            fileReader.readAsDataURL(file);
+            fileReader.onload = (e) => {
+              const { result } = e.target;
+                array.push(result);
+                console.log(result);
+
+            };
+            return 0;
+    });
+    setImageurl(array);
+    console.log(array);
+}
 
     return (
         <div className='overlay'>
@@ -63,13 +84,12 @@ export function UploadImageUIComponent({upload}) {
                                 </div>
                                 <div className='cancelanduploadbtn'>
                                     <button className='popupclosebtn' onClick={handlepopupclose}>Cancel</button>
-                                    <button className='uploadbutton' type='button' onClick={()=> upload(images)}>Upload</button>
+                                    <button className='uploadbutton' id='notactive' type='button' onClick={()=>Userimages(imageurl)}>Upload</button>
                                 </div>
                             </div>
                         </div> : ""}
                 </div>
             </div>
         </div>
-
     )
 }
