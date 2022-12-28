@@ -42,14 +42,13 @@ function (any) () {
 
 ## Examples 
 
-` import React, { useState } from 'react';
+```
+  import React, { useState } from 'react';
 
   import { UploadImageUIComponent } from '@kaavian-sys/imageuploaduicomponent';
 
   function App() {
     const [images, setImages] = useState([]);
-  
-  
 
     return (
         <div>
@@ -64,6 +63,7 @@ function (any) () {
     }
 
 export default App;
+```
 
 *** This Example will take the image store it and Display it Using a img Tag( <img></img> ). ***
 
