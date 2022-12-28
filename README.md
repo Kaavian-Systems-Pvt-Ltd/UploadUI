@@ -10,23 +10,24 @@ The images that are selected or choosed can be accessed. and *** the images are 
 
 ## Install Command
 
-` npm install https://github.com/Kaavian-Systems-Pvt-Ltd/UploadUI.git `
+``` npm install https://github.com/Kaavian-Systems-Pvt-Ltd/UploadUI.git ```
 
 ## peer dependencies
 
 In case, if you have any problem with this Package dependencies, just install this
 
-` npm i -S react react-dom react-icons `
+``` npm i -S react react-dom react-icons ```
 
 ## To Import or To Use
 
-` import { UploadImageUIComponent } from '@kaavian-sys/imageuploaduicomponent'; `
+```import { UploadImageUIComponent } from '@kaavian-sys/imageuploaduicomponent';```
 
 ## How to Use
 
 **First Create a useState**
 **Then Call this (Userimages) and By using Use state the get the image that is being sent and store it in.**
 
+```
 function (any) () {
 
     const [images, setImages] = useState([]);
@@ -35,10 +36,12 @@ function (any) () {
 
     return(
         ...
-        ` <UploadImageUIComponent Userimages={(image) => setImages(image)}/> `
+         <UploadImageUIComponent Userimages={(image) => setImages(image)}/> 
         ...
     )
 }
+
+```
 
 ## Examples 
 
