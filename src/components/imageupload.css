@@ -38,6 +38,10 @@
 	scrollbar-width: none;
 }
 
+.allshownimages::-webkit-scrollbar{
+    overflow: hidden;
+}
+
 
 .allshownimages :active{
     cursor: grab;
@@ -49,18 +53,19 @@
 .imageremovebtn {
     width: fit-content;
     height:fit-content;
-    color: #000000;
+    color: #FFFFFF;
     background: inherit;
     font-size: medium;
     border: 0px;
     border-radius: 35%;
-    margin-left: 100%;
+    margin-left: 90%;
     position: relative;
     bottom: 80%;
+    cursor: pointer;
 }
 
-.imageremovebtn:hover  {
-    cursor: pointer;
+.imageremovebtn .allshownimages:hover  {
+    margin-left: 20%;
 }
 
 /* .uploadcomponentoverall {
@@ -91,9 +96,8 @@
 }
 /*Cancel button in pop up*/
 .popupclosebtn {
-    width: 30%;
-    padding-top: 2%;
-    padding-bottom: 2%;
+    width: 100%;
+    padding: 7% 25% 7% 25%;
     border-radius: 10px;
     color: #A9D6DA;
     border: 1px solid #A9D6DA;
@@ -107,10 +111,9 @@
 /*upload button in pop up*/
 .uploadbutton {
     border-radius: 10px;
-    margin-left: 10%;
-    width: 30%;
-    padding-top: 2%;
-    padding-bottom: 2%;
+    margin-left: 5%;
+    width: 100%;
+    padding: 7% 25% 7% 25%;
     background: #0E8692;
     color: #FFFFFF;
     font-family: 'Fira sans';
@@ -123,7 +126,9 @@
 /*both upload and cancel button DIV*/
 .cancelanduploadbtn {
     display: flex;
-    margin-left: 25%;
+    width: fit-content;
+    margin-left: 55%;
+    margin-right: -10%;
     margin-top: 8%;
     font-family: 'Fira sans';
 }
@@ -206,7 +211,7 @@
     width: 35%;
     height: fit-content;
     border: 1px solid #0E8692;
-    box-shadow: 3px 7px 4px 4px #D7EFF2;
+    /* box-shadow: 3px 7px 4px 4px #D7EFF2; */
     border-radius: 20px;
 }
 
@@ -219,13 +224,3 @@
     font-family: 'Fira sans';
     font-weight: 400;
 }
-
-/* .overlay {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-color: rgb(223, 215, 215);
-    opacity: 10;
-} */
