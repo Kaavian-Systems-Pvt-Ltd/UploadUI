@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import { FilesDragAndDrop } from './FileDragAndDrop.jsx';
 import './imageupload.css';
+const newImageURLs = [];
+const newImages = [];
 
-export function UploadImageUIComponent({Userimages}) {
+export function UploadImageUIComponent(props) {
     const [popup, setPopup] = useState(false)
     const [imageURLs, setImageURLS] = useState([]);
     const [images, setImage] = useState([]);
@@ -10,13 +13,16 @@ export function UploadImageUIComponent({Userimages}) {
 
     useEffect(() => {
         if (images.length < 0) return;
-        const newImageURLs = [];
-        images.forEach(image => newImageURLs.push(URL.createObjectURL(image)));
-        setImageURLS(newImageURLs);
-        if(images) {
-            upload(images);
-        };
-    }, [images])
+                    images.map ((image)=>{
+                        newImages.push (image);
+                        newImageURLs.push(URL.createObjectURL(image));
+                    })
+                        // newImageURLs.push(URL.createObjectURL(image));
+                    setImageURLS(newImageURLs);
+                    if(newImages) {
+                        upload(newImages);
+                    };
+                }, [images])
 
     function onImageChange(e) {
       setImage([...e.target.files]);
@@ -84,7 +90,7 @@ export function UploadImageUIComponent({Userimages}) {
                                 </div>
                                 <div className='cancelanduploadbtn'>
                                     <button className='popupclosebtn' onClick={handlepopupclose}>Cancel</button>
-                                    <button className='uploadbutton' id='notactive' type='button' onClick={()=>Userimages(imageurl)}>Upload</button>
+                                    <button className='uploadbutton' id='notactive' type='button' onClick={()=> props.userimages(imageurl)}>Upload</button>
                                 </div>
                             </div>
                         </div> : ""}
@@ -92,4 +98,14 @@ export function UploadImageUIComponent({Userimages}) {
             </div>
         </div>
     )
+}
+
+UploadImageUIComponent.propType = {
+    'userimages' : PropTypes.func.isRequired
+}
+
+UploadImageUIComponent.defaultProps = {
+    'userimages' : ()=> {
+        return <></>
+    }
 }
