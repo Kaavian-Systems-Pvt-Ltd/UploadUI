@@ -2,7 +2,7 @@ const path = require ('path');
 const { CleanWebpackPlugin } = require ('clean-webpack-plugin');
 const nodeExternals = require ('webpack-node-externals');
 module.exports = {
-  'entry' : './src/index.js' ,
+  'entry' : './src/index.jsx' ,
   'externalsPresets': { node: true },
   'externals' : [ new nodeExternals() ],
   'output' : {

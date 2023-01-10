@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import { FilesDragAndDrop } from './FileDragAndDrop.jsx';
 import './imageupload.css';
 const newImageURLs = [];
 const newImages = [];
 
-export function UploadImageUIComponent(props) {
+export function UploadImageUIComponent({Userimages}) {
     const [popup, setPopup] = useState(false)
     const [imageURLs, setImageURLS] = useState([]);
     const [images, setImage] = useState([]);
@@ -17,7 +17,6 @@ export function UploadImageUIComponent(props) {
                         newImages.push (image);
                         newImageURLs.push(URL.createObjectURL(image));
                     })
-                        // newImageURLs.push(URL.createObjectURL(image));
                     setImageURLS(newImageURLs);
                     if(newImages) {
                         upload(newImages);
@@ -59,6 +58,10 @@ export function UploadImageUIComponent(props) {
     console.log(array);
 }
 
+    const send = ()=> {
+        Userimages(imageurl)
+    }
+
     return (
         <div className='overlay'>
             <button className='popupuploadbutton' onClick={handlepopup}>Upload</button>
@@ -90,7 +93,7 @@ export function UploadImageUIComponent(props) {
                                 </div>
                                 <div className='cancelanduploadbtn'>
                                     <button className='popupclosebtn' onClick={handlepopupclose}>Cancel</button>
-                                    <button className='uploadbutton' id='notactive' type='button' onClick={()=> props.userimages(imageurl)}>Upload</button>
+                                    <button className='uploadbutton' id='notactive' type='button' onClick={send}>Upload</button>
                                 </div>
                             </div>
                         </div> : ""}
@@ -100,12 +103,6 @@ export function UploadImageUIComponent(props) {
     )
 }
 
-UploadImageUIComponent.propType = {
-    'userimages' : PropTypes.func.isRequired
-}
-
-UploadImageUIComponent.defaultProps = {
-    'userimages' : ()=> {
-        return <></>
-    }
-}
+// UploadImageUIComponent.propType = {
+//     'userimages' : PropTypes.func.isRequired
+// }
