@@ -5,7 +5,7 @@ import './imageupload.css';
 const newImageURLs = [];
 const newImages = [];
 
-export function UploadImageUIComponent({Userimages}) {
+export function UploadImageUIComponent({UserprmImage}) {
     const [popup, setPopup] = useState(false)
     const [imageURLs, setImageURLS] = useState([]);
     const [images, setImage] = useState([]);
@@ -13,18 +13,18 @@ export function UploadImageUIComponent({Userimages}) {
 
     useEffect(() => {
         if (images.length < 0) return;
-                    images.map ((image)=>{
-                        newImages.push (image);
-                        newImageURLs.push(URL.createObjectURL(image));
-                    })
-                    setImageURLS(newImageURLs);
-                    if(newImages) {
-                        upload(newImages);
-                    };
-                }, [images])
+        images.map((image) => {
+            newImages.push(image);
+            newImageURLs.push(URL.createObjectURL(image));
+        })
+        setImageURLS(newImageURLs);
+        if (newImages) {
+            upload(newImages);
+        };
+    }, [images])
 
     function onImageChange(e) {
-      setImage([...e.target.files]);
+        setImage([...e.target.files]);
     }
 
     const handlepopup = () => {
@@ -44,22 +44,22 @@ export function UploadImageUIComponent({Userimages}) {
     const upload = (images) => {
         console.log(images);
         images.map((file) => {
-        const fileReader = new FileReader();
+            const fileReader = new FileReader();
             fileReader.readAsDataURL(file);
             fileReader.onload = (e) => {
-              const { result } = e.target;
+                const { result } = e.target;
                 array.push(result);
                 console.log(result);
 
             };
             return 0;
-    });
-    setImageurl(array);
-    console.log(array);
-}
+        });
+        setImageurl(array);
+        console.log(array);
+    }
 
-    const send = ()=> {
-        Userimages(imageurl)
+    function Userimage() {
+        UserprmImage(imageurl);
     }
 
     return (
@@ -93,7 +93,7 @@ export function UploadImageUIComponent({Userimages}) {
                                 </div>
                                 <div className='cancelanduploadbtn'>
                                     <button className='popupclosebtn' onClick={handlepopupclose}>Cancel</button>
-                                    <button className='uploadbutton' id='notactive' type='button' onClick={send}>Upload</button>
+                                    <button className='uploadbutton' id='notactive' type='button' onClick={Userimage}>Upload</button>
                                 </div>
                             </div>
                         </div> : ""}
@@ -102,7 +102,3 @@ export function UploadImageUIComponent({Userimages}) {
         </div>
     )
 }
-
-// UploadImageUIComponent.propType = {
-//     'userimages' : PropTypes.func.isRequired
-// }
