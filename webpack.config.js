@@ -7,10 +7,10 @@ module.exports = {
   'externals' : [ new nodeExternals() ],
   'output' : {
     'filename' : 'bundle.js' ,
-    'path' : path.resolve (__dirname , 'dist') ,
+    'path' : path.resolve (__dirname , 'dist'),
     'libraryTarget' : 'commonjs' 
   } , 
-  'plugins' : [ new CleanWebpackPlugin () ] ,
+  'plugins' : [ new CleanWebpackPlugin () ],
   'resolve' : {
     'extensions' : [ '.js' , '.jsx' ]
   } ,
