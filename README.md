@@ -36,7 +36,7 @@ function (any) () {
 
     return(
         ...
-         <UploadImageUIComponent Userimages={(image) => setImages(image)}/> 
+         <UploadImageUIComponent UserprmImage={(image) => setImages(image)}/> 
         ...
     )
 }
@@ -55,7 +55,7 @@ function (any) () {
 
     return (
         <div>
-            <UploadImageUIComponent Userimages={(image) => setImages(image)}/>
+            <UploadImageUIComponent UserprmImage={(image) => setImages(image)}/>
             {images.map((fl2, index) => (
             <div key={index}>
                 <img alt='' src={fl2}></img>
@@ -68,7 +68,7 @@ function (any) () {
 export default App;
 ```
 
-*** This Example will take the image store it and Display it Using a img Tag( <img></img> ). ***
+*** This Example will take the image store it and Display it Using map function. ***
 
 
 
