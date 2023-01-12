@@ -63,7 +63,7 @@ export function UploadImageUIComponent({UserprmImage}) {
     }
 
     return (
-        <div className='overlay'>
+        <div>
             <button className='popupuploadbutton' onClick={handlepopup}>Upload</button>
             <div className='uploadcomponentoverall'>
                 <div >
