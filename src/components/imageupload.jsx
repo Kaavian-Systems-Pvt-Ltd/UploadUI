@@ -60,10 +60,11 @@ export function UploadImageUIComponent({UserprmImage}) {
 
     function Userimage() {
         UserprmImage(imageurl);
+        alert ('Uploaded Sucessfully');
     }
 
     return (
-        <div className='overlay'>
+        <div>
             <button className='popupuploadbutton' onClick={handlepopup}>Upload</button>
             <div className='uploadcomponentoverall'>
                 <div >
