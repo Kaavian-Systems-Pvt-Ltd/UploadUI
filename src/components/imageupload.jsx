@@ -60,6 +60,7 @@ export function UploadImageUIComponent({UserprmImage}) {
 
     function Userimage() {
         UserprmImage(imageurl);
+        alert ('Uploaded Sucessfully');
     }
 
     return (
